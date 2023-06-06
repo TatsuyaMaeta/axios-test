@@ -23,7 +23,14 @@ let hoge = null;
 const getCityName = async () => {
     await axios
         .get(
-            `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${ApiKey}`
+            `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${ApiKey}`,
+            {
+                headers: {
+                    "Content-type": "Application/json",
+                    Accept: "Application/json",
+                },
+   
+            }
         )
         .then((response) => {
             console.log(response.data.name);
