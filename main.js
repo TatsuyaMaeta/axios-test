@@ -15,22 +15,12 @@ const cityName = "tokyo";
 
 let hoge = null;
 
-// const test = ()=>{
-//     console.log('test');
-// }
-// test()
-
 const getCityName = async () => {
     await axios
         .get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${ApiKey}`,
-            {
-                headers: {
-                    "Content-type": "Application/json",
-                    Accept: "Application/json",
-                },
-   
-            }
+            // ちなみにここのURLがhttpだとセキュリティの問題でerrになるので要注意！
+            // 参考記事：https://tokushiyo.net/web/post-1349/
+            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${ApiKey}`
         )
         .then((response) => {
             console.log(response.data.name);
