@@ -76,3 +76,27 @@ const getWeather = async (name) => {
 //     console.log(res);
 //     elem2.innerHTML = res;
 // });
+
+const getCountries = async () => {
+    await axios
+        .get(
+            "https://api.first.org/data/v1/countries?region=asia",
+            {
+                // 必要な箇所だけ抜粋
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin":
+                        "https://tatsuyamaeta.github.io/",
+                },
+            }
+            // "https://api.first.org/data/v1/countries?region=asia"
+        )
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+getCountries();
