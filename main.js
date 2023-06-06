@@ -86,7 +86,7 @@ const getCountries = async () => {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin":
-                        "https://tatsuyamaeta.github.io/",
+                        "https://tatsuyamaeta.github.io/axios-test/index.html",
                 },
             }
             // "https://api.first.org/data/v1/countries?region=asia"
